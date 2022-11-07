@@ -1,7 +1,10 @@
 <template>
   <div class="cart_grid">
     <div class="item_grid">
-      <CartItem v-for="item in storeTasks.cart" :key="item.id" :item="item" />
+      <CartItem 
+        v-for="item in storeTasks.cart" 
+        :key="item.id" 
+        :item="item" />
     </div>
     <div class="total">
       <p>Total</p>
@@ -12,9 +15,9 @@
 
 <script setup>
 // IMPORTS
-import CartItem from "@/components/CartItem.vue";
-import { useStoreTasks } from "@/stores/counter";
-import { computed } from "vue";
+import CartItem from "@/components/CartItem.vue"
+import { useStoreTasks } from "@/stores/counter"
+import { computed } from "vue"
 
 // STORE
 const storeTasks = useStoreTasks()

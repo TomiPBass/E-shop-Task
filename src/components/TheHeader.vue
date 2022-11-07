@@ -2,8 +2,12 @@
   <div class="header">
     <h1>E-SHOP</h1>
     <div class="routers">
-      <RouterLink class="router_link" to="/store"> Store </RouterLink>
-      <RouterLink class="router_link" to="/cart"> Cart </RouterLink>
+      <RouterLink 
+        class="router_link" 
+        to="/store"> Store </RouterLink>
+      <RouterLink 
+        class="router_link" 
+        to="/cart"> Cart </RouterLink>
     </div>
   </div>
 </template>

@@ -1,18 +1,26 @@
 <template>
   <div class="item_grid">
-    <StoreItem v-for="item in storeTasks.cart" :key="item.id" :item="item" :item-id="item.id"  @check="checkCart(item.id)" />
-    <div class="cart_button">
+    <StoreItem 
+      v-for="item in storeTasks.cart" 
+      :key="item.id" 
+      :item="item" 
+      :item-id="item.id"  
+      @check="checkCart(item.id)" />
+    <RouterLink to="/cart" class="cart_button">
       <p class="cart_item_number">{{quantity}}</p>
-      <img src="@/assets/images.png" alt="" class="cart_icon" />
-    </div>
+      <img 
+        src="@/assets/images.png" 
+        alt="" 
+        class="cart_icon" />
+    </RouterLink>
   </div>
 </template>
 
 <script setup>
 // IMPORTS
-import StoreItem from "@/components/StoreItem.vue";
-import { computed } from "vue";
-import { useStoreTasks } from "../stores/counter";
+import StoreItem from "@/components/StoreItem.vue"
+import { computed } from "vue"
+import { useStoreTasks } from "../stores/counter"
 
 // STORE
 const storeTasks = useStoreTasks()

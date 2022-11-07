@@ -1,5 +1,7 @@
 <template>
-  <div class="cart_item_box" v-if="item.quantity > 0">
+  <div 
+    class="cart_item_box" 
+    v-if="item.quantity > 0">
     <div class="x">
       <button @click="removeAll(item)">x</button>
     </div>

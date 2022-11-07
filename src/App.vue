@@ -10,20 +10,18 @@
 import TheHeader from "../../e-shop/src/components/TheHeader.vue";
 import JsonFile from "@/assets/items";
 import { useStoreTasks } from "@/stores/counter";
-import { onMounted, onUpdated } from "vue";
+import { onMounted } from "vue";
 
 // STORE
 const storeTasks = useStoreTasks()
 
 // Stringify and Parse Data
 onMounted(() => {
-  const stringJSON = JSON.stringify(JsonFile);
-  storeTasks.cart = JSON.parse(stringJSON);
+  storeTasks.cart = JsonFile;
   storeTasks.cart.forEach((item) => {
     item.quantity = 0
   })
 });
-
 </script>
 
 <style>

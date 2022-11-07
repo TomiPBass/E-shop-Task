@@ -2,16 +2,27 @@
   <div class="store_item_box">
     <p class="title">{{ props.item.name }}</p>
     <div class="image">
-      <img :src="props.item.picture" alt="Image not found" />
+      <img 
+        :src="props.item.picture" 
+        alt="Image not found" />
     </div>
-
     <div class="bottom">
       <p class="price">{{ props.item.price }}€</p>
-      <button class="buy" :class="{nondisplayed: quantity > 0}" @click="addToCart(item)">BUY</button>
-      <div class="quantity" :class="{nondisplayed: quantity === 0}">
-        <button class="plus_minus" @click="outOfCart(item)">-</button>
+      <button 
+        class="buy" 
+        :class="{nondisplayed: quantity > 0}" 
+        @click="addToCart(item)"
+      >BUY</button>
+      <div 
+        class="quantity" 
+        :class="{nondisplayed: quantity === 0}">
+        <button 
+          class="plus_minus" 
+          @click="outOfCart(item)">-</button>
         <p>{{ quantity }}</p>
-        <button class="plus_minus" @click="addToCart(item)">+</button>
+        <button 
+          class="plus_minus" 
+          @click="addToCart(item)">+</button>
       </div>
     </div>
   </div>
@@ -19,8 +30,8 @@
 
 <script setup>
 // IMPORTS
-import { useStoreTasks } from "@/stores/counter";
-import { computed } from "vue";
+import { useStoreTasks } from "@/stores/counter"
+import { computed } from "vue"
 
 // STORE
 const storeTasks = useStoreTasks()
@@ -53,8 +64,6 @@ const addToCart = (pickedItem) => {
 const outOfCart = (pickedItem) => {
   storeTasks.outOfCart(pickedItem)
 }
-
-
 </script>
 
 <style scoped>
